@@ -1,10 +1,7 @@
-import SideNavBar from "../components/SideNavBar";
 import TopNavBar from "../components/TopNavBar";
 import Typed from 'react-typed';
 import Travel from '../assets/travel.jpg';
-import Person from '../assets/person.png';
-import Family from '../assets/family.png';
-import Group from '../assets/group.png';
+import MembershipCard from '../components/MembershipCard';
 
 function Home() {
   return (
@@ -25,7 +22,7 @@ function Home() {
       {/* trip packages */}
       <div className="bg-white px-4 py-16 text-black">
         <div className="grid grid-cols-1 lg:grid-cols-2">
-          <img className="mx-8 px-32" src={Travel} />
+          <img className="mx-8 px-32" src={Travel} alt='/' />
           <div className="flex flex-col justify-center text-center mx-12 py-4">
             <h1 className="font-bold text-lg pb-4">TRAVEL PACKAGES</h1>
             <p className="pb-16">
@@ -63,33 +60,9 @@ function Home() {
       {/* buy membership */}
       <div className="w-full py-40 bg-white text-black">
         <div className="grid grid-cols-1 lg:grid-cols-3 justify-center text-center md:mx-32 gap-8">
-          <span className="bg-slate-100 flex mx-4 flex-col justify-center py-12 text-center shadow-xl hover:scale-105 duration-300">
-            <img src={Person} alt='/' className="mx-20 px-12" />
-            <h1 className="text-2xl text-bold">Individual</h1>
-            <p className="text-xl font-bold my-4">$19</p>
-            <p className="py-2 border-b border-b-gray-300 mx-8">Granted for 1 person</p>
-            <p className="py-2 border-b border-b-gray-300 mx-8">All Easy One Benefits</p>
-            <p className="py-2 border-b border-b-gray-300 mx-8">Upto 1 year</p>
-            <div className="bg-[#00d9fa] w-[150px] mx-auto mt-8 rounded-md py-2 text-black font-medium">Buy Now</div>
-          </span>
-          <span className="bg-slate-100 flex mx-4 flex-col justify-center py-12 text-center shadow-xl hover:scale-105 duration-200">
-            <img src={Family} alt='/' className="mx-20 px-12" />
-            <h1 className="text-2xl text-bold">Family</h1>
-            <p className="text-xl font-bold my-4">$39</p>
-            <p className="py-2 border-b border-b-gray-300 mx-8">Granted for upto 5 persons</p>
-            <p className="py-2 border-b border-b-gray-300 mx-8">All Easy One Benefits</p>
-            <p className="py-2 border-b border-b-gray-300 mx-8">Upto 1 year</p>
-            <div className="bg-[#00d9fa] w-[150px] mx-auto mt-8 rounded-md py-2 text-black font-medium">Buy Now</div>
-          </span>
-          <span className="bg-slate-100 flex mx-4 flex-col justify-center py-12 text-center shadow-xl hover:scale-105 duration-300">
-            <img src={Group} alt='/' className="mx-20 px-12" />
-            <h1 className="text-2xl text-bold">Group</h1>
-            <p className="text-xl font-bold my-4">$69</p>
-            <p className="py-2 border-b border-b-gray-300 mx-8">Granted for upto 10 persons</p>
-            <p className="py-2 border-b border-b-gray-300 mx-8">All Easy One Benefits</p>
-            <p className="py-2 border-b border-b-gray-300 mx-8">Upto 1 year</p>
-            <div className="bg-[#00d9fa] w-[150px] mx-auto mt-8 rounded-md py-2 text-black font-medium">Buy Now</div>
-          </span>
+          <MembershipCard data={{membershipType: "Individual", price: 19, validity: 1, personCount: 1}}/>
+          <MembershipCard data={{membershipType: "Family", price: 39, validity: 1, personCount: 5}}/>
+          <MembershipCard data={{membershipType: "Group", price: 69, validity: 1, personCount: 10}}/>
         </div>
       </div>
 
