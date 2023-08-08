@@ -1,17 +1,16 @@
-import { useState } from "react";
+import { useNavigate } from "react-router";
 
 function TopNavBar() {
-  const [showNav, setShowNav] = useState(true);
-
-  const handleNav = () => setShowNav(!showNav)
+  const navigate = useNavigate();
+  const homePageHandler = () => navigate('/');
 
   return (
-    <div className="flex pt-4 h-24">
-      <div className="w-full text-3xl font-bold text-[#00d9fa]">EASY TRIP</div>
+    <div className="flex justify-between mt-4 h-24">
+      <div className="text-3xl font-bold text-[#00d9fa] cursor-pointer" onClick={homePageHandler}>EASY TRIP</div>
       <div>
-        <span className="pr-4">resources</span>
-        <span className="pr-4">about</span>
-        <span className="pr-4">login</span>
+        <span className="mr-4 cursor-pointer">resources</span>
+        <span className="mr-4 cursor-pointer">about</span>
+        <span className="mr-4 cursor-pointer">login</span>
       </div>
     </div>
   );
